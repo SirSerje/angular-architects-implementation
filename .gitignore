@@ -1,0 +1,174 @@
+# ================================
+# Node.js Dependencies
+# ================================
+
+# Ignore all node_modules directories at any depth
+node_modules/
+**/node_modules/
+
+# ================================
+# Build Outputs
+# ================================
+
+# Common build directories
+/dist/
+/build/
+/out/
+/public/build/
+
+# Framework-specific build directories
+/.angular/cache/
+/nx/cache/
+/.vite/
+/webpack-cache/
+/.remix/
+/.next/
+.storybook-static/
+/svelte-kit/
+/quasar/
+/storybook-static/
+/.gatsby/
+
+# Module Federation specific
+remoteEntry.js
+/*.remote.js
+
+# ================================
+# Temporary Build Directories
+# ================================
+
+tmp/
+temp/
+cache/
+.cache/
+**/.cache/
+
+# ================================
+# Log Files
+# ================================
+
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ================================
+# Dependency Directories
+# ================================
+
+jspm_packages/
+.npm/
+
+# ================================
+# Caches and Histories
+# ================================
+
+.eslintcache
+.node_repl_history
+**/.eslintcache
+
+# ================================
+# Environment Variables
+# ================================
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ================================
+# IDE and Editor Directories and Files
+# ================================
+
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-workspace
+*.sublime-project
+
+# ================================
+# OS Generated Files
+# ================================
+
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# ================================
+# Miscellaneous
+# ================================
+
+*.pem
+*.p12
+*.key
+*.crt
+
+# Coverage reports
+coverage/
+*.lcov
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Yarn integrity
+.yarn-integrity
+
+# pnpm store
+.pnpm-store/
+
+# Parcel cache
+.cache/
+
+# Gatsby files
+.cache/
+public/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+
+# ================================
+# Multiple Frontend Directories
+# ================================
+
+# If you have multiple frontend directories like 'a/', 'b/', etc.,
+# and you want to ensure that all relevant subdirectories are ignored,
+# you can add specific patterns or rely on the general patterns above.
+
+# Example for specific frontend directories:
+#a/
+#b/
+#c/
+# Uncomment and add as needed.
+
+# Alternatively, to ignore all node_modules and related build directories
+# within any first-level directory, you can use:
+
+*/node_modules/
+*/dist/
+*/build/
+*/out/
+*/public/build/
+*/.angular/cache/
+*/nx/cache/
+*/.vite/
+*/webpack-cache/
+*/.remix/
+*/.next/
+*/storybook-static/
+*/svelte-kit/
+*/quasar/
+*/storybook-static/
+*/.gatsby/
+
