@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { initWrapperConfig, WrapperComponent, WrapperConfig } from "./wrapper/wrapper.component";
+import { loadRemoteModule as loadNativeRemote } from '@angular-architects/native-federation';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterModule, WrapperComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'shell';
-}
+public conf: any = {}
+ }

@@ -9,7 +9,6 @@ class App extends React.Component {
     return ([
         <h1>
           React
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" height="30"></img>
         </h1>,
         <p>
           React Version: {reactVersion}
