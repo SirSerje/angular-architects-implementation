@@ -12,6 +12,8 @@ module.exports = defineConfig({
     uniqueName: 'mfe4',
     hashFunction: 'xxhash64'
   },
+  cache: true,
+  devtool: false,
   module: {
     rules: [
       {
@@ -20,6 +22,8 @@ module.exports = defineConfig({
         use: {
           loader: 'babel-loader',
           options: {
+            cacheDirectory: true,
+            cacheCompression: false,
             presets: ['@babel/preset-react', '@babel/preset-env']
           }
         }
