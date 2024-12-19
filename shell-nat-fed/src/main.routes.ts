@@ -2,7 +2,8 @@ import { initFederation as initNativeFederation } from '@angular-architects/nati
 import { init as initModuleFederation } from '@module-federation/enhanced/runtime';
 import { getShared } from './app/shared/federation-helpers';
 
-(async () => {
+export const invokeMainRoutes = (async () => {
+
   // Step 1: Initialize Native Federation
   await initNativeFederation('federation.manifest.json');
   // await initNativeFederation('federation-attempt.manifest.json');
@@ -27,4 +28,4 @@ import { getShared } from './app/shared/federation-helpers';
 
   // Step 4: Delegate to file bootstrapping the SPA
   await import('./bootstrap');
-})();
+})

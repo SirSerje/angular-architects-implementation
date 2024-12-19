@@ -7,7 +7,6 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-const URL = 'http://localhost:3000/remoteEntry.js';
 
 export const APP_ROUTES: Routes = [
   {
@@ -33,7 +32,7 @@ export const APP_ROUTES: Routes = [
     data: {
       type: 'script',
       remoteEntry:
-        'https://witty-wave-0a695f710.azurestaticapps.net/remoteEntry.js',
+       'http://localhost:4204/remoteEntry.js',
       remoteName: 'react',
       exposedModule: './web-components',
       elementName: 'react-element',
