@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "export NODE_OPTIONS=--openssl-legacy-provider && wwebpack serve --mode=development --devtool=source-map",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && webpack serve --mode=development --devtool=source-map",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider && webpack --mode=production",
     "start:rs": "export NODE_OPTIONS=--openssl-legacy-provider && rspack dev --devtool=source-map"
   },
