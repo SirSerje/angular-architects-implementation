@@ -1,0 +1,38 @@
+h1 {
+    margin-top: 0px;
+}
+
+body {
+    font-family: sans-serif;
+
+}
+
+.nav, .nav A {
+    gap: 4px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    line-height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    a {
+      margin-right: 5px;
+    }
+}
+
+.content {
+    padding: 10px;
+}
+
+.mf {
+    font-weight: bold;
+}
+
+.nf {
+    font-weight: bold;
+}
+
+.welcome {
+    margin-top: 40px;
+}
