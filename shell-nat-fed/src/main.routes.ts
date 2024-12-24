@@ -1,11 +1,16 @@
-import { initFederation as initNativeFederation } from '@angular-architects/native-federation';
+import { initFederation } from '@angular-architects/native-federation';
 import { init as initModuleFederation } from '@module-federation/enhanced/runtime';
 import { getShared } from './app/shared/federation-helpers';
 
 export const invokeMainRoutes = (async () => {
 
   // Step 1: Initialize Native Federation
-  await initNativeFederation('federation.manifest.json');
+  await initFederation(
+    {
+      "mfe1": "http://localhost:3001/remoteEntry.json",
+      "svelte": "https://kind-grass-08faefd03.4.azurestaticapps.net/remoteEntry.json",
+  }
+  );
   // await initNativeFederation('federation-attempt.manifest.json');
 
   // Step 2: Get meta data about libs shared via Native Federation
