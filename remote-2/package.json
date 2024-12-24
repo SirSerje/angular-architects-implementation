@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc build/build-mfe1.ts --outDir dist && node dist/build-mfe1.js",
+    "build": "tsc builds/build-mfe1.ts --outDir dist && node dist/build-mfe1.js",
     "watch": "concurrently \"npm run build:remote -- --watch\" \"npm run build:host -- --watch\"",
     "start": "live-server dist/mfe1 --port=3001 --cors"
   },
