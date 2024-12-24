@@ -3,9 +3,7 @@
 ## How to start?
 
 1. node `v20.17.0` (22 works as well, but 20.17 was checked)
-2. ensure that ports 4204 and 4250 are free, because app won't use any different
-3. `cd shell-nat-fed && npm i && npm run start`
-4. in parallel window `cd remote-1 && npm i && npm run start`
+2. TODO 
 
 ## Questions and TODOs
 

@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-// @ts-ignore
+// @ts-ignore because react is coming through MFE
 import * as React from 'react';
-// @ts-ignore
+// @ts-ignore because react is coming through MFE
 import { createRoot, Root } from 'react-dom/client';
 import { loadRemoteModule as loadNativeRemote } from '@angular-architects/native-federation';
 
