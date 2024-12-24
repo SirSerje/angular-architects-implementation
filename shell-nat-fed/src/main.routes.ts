@@ -30,6 +30,7 @@ export const invokeMainRoutes = (async () => {
     shared,
   })
   .initializeSharing();
+  console.log('SHARED', shared)
 
   // Step 4: Delegate to file bootstrapping the SPA
   await import('./bootstrap');

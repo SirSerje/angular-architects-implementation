@@ -1,28 +1,42 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-// import * as React from 'react';
-// import * as ReactDOM from 'react-dom';
+// @ts-ignore
+import * as React from 'react';
+// @ts-ignore
+import { createRoot, Root } from 'react-dom/client';
 import { loadRemoteModule as loadNativeRemote } from '@angular-architects/native-federation';
 
 @Component({
-    selector: 'app-react-wrapper',
-    template: `<div #reactContainer></div>`,
+  selector: 'app-react-wrapper',
+  template: `<div #reactContainer></div>`,
 })
 export class ReactWrapperComponent implements OnInit, OnDestroy {
-    @ViewChild('reactContainer', { static: true }) containerRef!: ElementRef<HTMLDivElement>;
-    private ReactComponent: any;
+  @ViewChild('reactContainer', { static: true }) containerRef!: ElementRef<HTMLDivElement>;
+  private ReactComponent: any;
+  private reactRoot!: Root;
 
-    async ngOnInit() {
-        try {
-            const module = await loadNativeRemote('mfe1', './component');
-            this.ReactComponent = module.App;
-            console.log(this.ReactComponent);
-        } catch (error) {
-            console.error('Error loading React component:', error);
-        }
-    }
+  async ngOnInit() {
+    try {
+        // comes from the outside reop
+      const module = await loadNativeRemote('mfe1', './component');
+      this.ReactComponent = module.App;
+      console.log('Loaded React Component:', this.ReactComponent);
 
-    ngOnDestroy() {
-        if (this.containerRef && this.ReactComponent) {
-        }
+      if (this.ReactComponent) {
+        this.reactRoot = createRoot(this.containerRef.nativeElement);
+        this.reactRoot.render(React.createElement(this.ReactComponent, null));
+        console.log('React component has been mounted using createRoot.');
+      } else {
+        console.error('ReactComponent is undefined.');
+      }
+    } catch (error) {
+      console.error('Error loading React component:', error);
     }
+  }
+
+  ngOnDestroy() {
+    if (this.reactRoot) {
+      this.reactRoot.unmount();
+      console.log('React component has been unmounted.');
+    }
+  }
 }
