@@ -35,17 +35,17 @@ export const routes: Routes = [
       } as WrapperConfig
     }
   },
-  {
-    path: 'svelte',
-    component: WrapperComponent,
-    data: {
-      config: {
-        kind: 'native',
-        remoteName: 'svelte',
-        exposedModule: './web-components',
-        elementName: 'svelte-mfe',
-      } as WrapperConfig
-    }
-  },
+  // {
+  //   path: 'svelte',
+  //   component: WrapperComponent,
+  //   data: {
+  //     config: {
+  //       kind: 'native',
+  //       remoteName: 'svelte',
+  //       exposedModule: './web-components',
+  //       elementName: 'svelte-mfe',
+  //     } as WrapperConfig
+  //   }
+  // },
 
 ];
