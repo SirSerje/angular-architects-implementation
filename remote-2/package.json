@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc builds/build-mfe1.ts --outDir dist && node dist/build-mfe1.js",
-    "watch": "concurrently \"npm run build:remote -- --watch\" \"npm run build:host -- --watch\"",
+    "watch": "echo 'does not work!! \n '; concurrently \"npm run build:remote -- --watch\" \"npm run build:host -- --watch\"",
     "start": "live-server dist/mfe1 --port=3001 --cors"
   },
   "devDependencies": {
@@ -16,15 +16,11 @@
     "live-server": "^1.2.2",
     "typescript": "^5.2.2"
   },
-  "engines": {
-    "node": ">=20 <=21"
-  },
   "dependencies": {
     "@softarc/native-federation-runtime": "^2.0.0",
+    "lodash": "^4.17.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router": "7",
-    "react-router-dom": "^6.22.0"
-
+    "react-router": "7"
   }
 }
