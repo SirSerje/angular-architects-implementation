@@ -16,6 +16,9 @@
     "live-server": "^1.2.2",
     "typescript": "^5.2.2"
   },
+  "engines": {
+    "node": ">=20 <=21"
+  },
   "dependencies": {
     "@softarc/native-federation-runtime": "^2.0.0",
     "react": "18.2.0",
