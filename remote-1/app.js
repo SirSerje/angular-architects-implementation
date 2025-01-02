@@ -11,15 +11,15 @@ import {
 import './style.css'
 
 
-export const A = () => <p class='page-container'>Page <code>A</code> content</p>
-export const B = () => <p class='page-container'>Page <code>B</code> content</p>
+export const A = () => <p className='page-container'>Page <code>A</code> content</p>
+export const B = () => <p className='page-container'>Page <code>B</code> content</p>
 
 const App = () => {
   const reactVersion = require('./package.json').dependencies['react'];
 
   const [state, setState] = useState(5)
-  return <MemoryRouter>
-    <div class='app-container'><h1>
+  return <HashRouter>
+    <div className='app-container'><h1>
       React
     </h1>
       <p>
@@ -29,8 +29,8 @@ const App = () => {
       <p>fake counter: {state}</p>
       <button onClick={() => setState(state + 1)}>increment</button>
       <h3>internal links</h3>
-      <p><Link to='/a' class="link">Page A</Link>
-        <Link to='/b' class="link">Page B</Link></p>
+      <p><Link to='/a' className="link">Page A</Link>
+        <Link to='/b' className="link">Page B</Link></p>
         
       <h3>internal pages:</h3>
 
@@ -41,7 +41,7 @@ const App = () => {
 
       </Routes>
     </div>
-  </MemoryRouter>
+  </HashRouter>
 
 }
 

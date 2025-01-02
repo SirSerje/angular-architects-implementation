@@ -1,6 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
 import { BrowserRouter } from 'react-router';
+//@ts-ignore
+import * as X from 'rxjs';
+
 
 export function App() {
   const isTrue = _.isString('asdf');
