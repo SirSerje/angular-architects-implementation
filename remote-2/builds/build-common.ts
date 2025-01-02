@@ -49,7 +49,7 @@ export async function buildProject(projectName) {
         format: 'esm',
         mainFields: ['es2020', 'browser', 'module', 'main'],
         conditions: ['es2020', 'es2015', 'module'],
-        resolveExtensions: ['.ts', '.tsx', '.mjs', '.js'],
+        resolveExtensions: ['.ts', '.tsx', '.mjs', '.js', '.css', '.scss'],
         tsconfig: tsConfig,
         splitting: true,
     });
