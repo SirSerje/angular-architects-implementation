@@ -1,8 +1,7 @@
-
-const { defineConfig } = require('@rspack/cli')
+const { defineConfig } = require('@rspack/cli');
 const { ModuleFederationPlugin } = require('@module-federation/enhanced/rspack');
 const rspack = require('@rspack/core');
-const CopyPlugin = rspack.CopyRspackPlugin
+const CopyPlugin = rspack.CopyRspackPlugin;
 
 module.exports = defineConfig({
   entry: './index.js',
@@ -10,7 +9,7 @@ module.exports = defineConfig({
     filename: 'bundle.js',
     publicPath: 'auto',
     uniqueName: 'mfe4',
-    hashFunction: 'xxhash64'
+    hashFunction: 'xxhash64',
   },
   cache: true,
   devtool: false,
@@ -24,27 +23,34 @@ module.exports = defineConfig({
           options: {
             cacheDirectory: true,
             cacheCompression: false,
-            presets: ['@babel/preset-react', '@babel/preset-env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'react',
       filename: 'remoteEntry.js',
       exposes: {
-        './web-components': './app.js'
+        './web-components': './app.js',
       },
-      shared: ['react', 'react-dom']
+      shared: ['react', 'react-dom'],
     }),
     new CopyPlugin({
-      patterns: [{ from: './*.html' }]
-    })
+      patterns: [{ from: './*.html' }],
+    }),
   ],
   devServer: {
-    port: 4204
-  }
-})
-
+    port: 4204,
+  },
+});

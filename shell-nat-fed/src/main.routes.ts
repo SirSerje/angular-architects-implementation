@@ -8,10 +8,9 @@ export const invokeMainRoutes = (async () => {
   await initFederation(
     {
       "mfe1": "http://localhost:3001/remoteEntry.json",
-      "svelte": "https://kind-grass-08faefd03.4.azurestaticapps.net/remoteEntry.json",
+      // "svelte": "https://kind-grass-08faefd03.4.azurestaticapps.net/remoteEntry.json",
   }
   );
-  // await initNativeFederation('federation-attempt.manifest.json');
 
   // Step 2: Get meta data about libs shared via Native Federation
   const shared = getShared();
