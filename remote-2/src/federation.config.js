@@ -7,8 +7,8 @@ module.exports = withNativeFederation({
   name: "mfe1",
 
   exposes: {
-    "./component": "./mfe1/app",
-    "./routerComponent": "./mfe1/routerComponent",
+    "./component": "./src/app",
+    "./routerComponent": "./src/routerComponent",
   },
 
   shared: {

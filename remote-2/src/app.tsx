@@ -4,7 +4,8 @@ import { BrowserRouter } from 'react-router';
 //@ts-ignore
 import * as X from 'rxjs';
 console.log('rxjs content in react?', X);
-console.log(BrowserRouter);
+// FIXME: once react-router will be invoked, all setup will be broken
+// console.log(BrowserRouter);
 
 // for routing purposes
 const A = () => <p>Component A</p>;

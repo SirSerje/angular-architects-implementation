@@ -1,6 +1,6 @@
 {
-  "name": "federation-demo1",
-  "version": "1.0.0",
+  "name": "remote-2",
+  "version": "0.0.1",
   "scripts": {
     "build": "tsc builds/build-mfe1.ts --outDir dist && node dist/build-mfe1.js",
     "watch": "echo 'does not work!! \n '; concurrently \"npm run build:remote -- --watch\" \"npm run build:host -- --watch\"",

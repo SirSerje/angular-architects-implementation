@@ -6,6 +6,7 @@ import { createEsBuildAdapter } from '@softarc/native-federation-esbuild';
 import { reactReplacements } from '@softarc/native-federation-esbuild/src/lib/react-replacements';
 
 export async function buildProject(projectName) {
+    console.log(123, projectName)
     // log react replacements to see internals
     // console.log(reactReplacements);
 
@@ -19,7 +20,8 @@ export async function buildProject(projectName) {
             workspaceRoot: path.join(__dirname, '..'),
             outputPath,
             tsConfig,
-            federationConfig: `${projectName}/federation.config.js`,
+            // federationConfig: `${projectName}/federation.config.js`,
+            federationConfig: `src/federation.config.js`,
             verbose: true,
         },
 
@@ -43,7 +45,8 @@ export async function buildProject(projectName) {
     fs.rmSync(outputPath, { force: true, recursive: true });
 
     await esbuild.build({
-        entryPoints: [`${projectName}/main.ts`],
+        entryPoints: [`src/main.ts`],
+        // entryPoints: [`${projectName}/main.ts`],
         external: federationBuilder.externals,
         outdir: outputPath,
         bundle: true,
@@ -56,9 +59,9 @@ export async function buildProject(projectName) {
         splitting: true,
     });
 
-    fs.copyFileSync(`${projectName}/index.html`, `dist/${projectName}/index.html`);
-    fs.copyFileSync(`${projectName}/favicon.ico`, `dist/${projectName}/favicon.ico`);
-    fs.copyFileSync(`${projectName}/styles.css`, `dist/${projectName}/styles.css`);
+    fs.copyFileSync(`src/index.html`, `dist/${projectName}/index.html`);
+    fs.copyFileSync(`src/favicon.ico`, `dist/${projectName}/favicon.ico`);
+    fs.copyFileSync(`src/styles.css`, `dist/${projectName}/styles.css`);
 
     /*
         *  Step 3: Let the build method do the additional tasks
