@@ -1,24 +1,26 @@
 import * as esbuild from 'esbuild';
 import * as path from 'path';
 import * as fs from 'fs';
-import { createEsBuildAdapter } from '@softarc/native-federation-esbuild';
 import { federationBuilder } from '@softarc/native-federation/build';
+import { createEsBuildAdapter } from '@softarc/native-federation-esbuild';
+import { reactReplacements } from '@softarc/native-federation-esbuild/src/lib/react-replacements';
 
 export async function buildProject(projectName) {
+    // log react replacements to see internals
+    // console.log(reactReplacements);
 
     const tsConfig = 'tsconfig.json';
     const outputPath = `dist/${projectName}`;
     /*
         *  Step 1: Initialize Native Federation
     */
-
     await federationBuilder.init({
         options: {
             workspaceRoot: path.join(__dirname, '..'),
             outputPath,
             tsConfig,
             federationConfig: `${projectName}/federation.config.js`,
-            verbose: false,
+            verbose: true,
         },
 
         /*
